@@ -122,6 +122,7 @@ body {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    z-index: 1001;
 }
 
 .hamburger span {
@@ -131,6 +132,18 @@ body {
     margin: 3px 0;
     transition: 0.3s;
     border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
 }
 
 /* Hero Section */
@@ -1454,10 +1467,31 @@ section {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 100%;
 }
 
 .map-container iframe {
     border-radius: 20px;
+    width: 100%;
+    height: 500px;
+    border: 0;
+    display: block;
+}
+
+/* Responsive iframe styling */
+@media (max-width: 768px) {
+    .map-container iframe {
+        height: 300px !important;
+        border-radius: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .map-container iframe {
+        height: 250px !important;
+        border-radius: 10px;
+    }
 }
 
 /* Footer */
@@ -1675,6 +1709,10 @@ section {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
     .hamburger {
         display: flex;
     }
@@ -1690,41 +1728,128 @@ section {
         transition: 0.3s;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
         padding: 2rem 0;
+        backdrop-filter: blur(10px);
+        z-index: 999;
     }
 
     .nav-menu.active {
         left: 0;
     }
 
+    .nav-title {
+        font-size: 1.1rem;
+    }
+
+    .nav-subtitle {
+        font-size: 0.8rem;
+    }
+
+    .logo {
+        height: 50px;
+        width: 50px;
+    }
+
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        line-height: 1.1;
     }
 
     .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        margin-bottom: 2rem;
     }
 
     .hero-content {
         padding: 2rem 1.5rem;
         margin: 0 1rem;
+        border-radius: 20px;
     }
 
     .hero-logo-img {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
     }
 
     .cta-button {
         padding: 12px 24px;
         font-size: 1rem;
+        border-radius: 25px;
     }
 
     .section-title {
         font-size: 2rem;
     }
 
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Services Grid Mobile */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 10px;
+    }
+
+    .service-card {
+        padding: 2rem 1.5rem;
+        margin: 0;
+    }
+
+    .service-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.3rem;
+    }
+
+    /* Gallery Mobile Responsiveness */
+    .gallery-container {
+        height: 300px;
+    }
+
+    .gallery-btn {
+        padding: 8px 12px;
+        font-size: 1rem;
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+    .dot {
+        height: 12px;
+        width: 12px;
+        margin: 0 3px;
+    }
+
+    /* Contact Section Mobile */
     .contact-content {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-item {
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-item i {
+        font-size: 1.3rem;
+    }
+
+    /* Map responsiveness */
+    .contact-content iframe {
+        width: 100% !important;
+        height: 300px !important;
+        border-radius: 15px;
     }
 
     .footer-content {
@@ -1736,35 +1861,49 @@ section {
     .footer-links {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 1.5rem;
     }
 
-    .gallery-btn {
-        padding: 10px 15px;
-        font-size: 1.2rem;
+    .footer-logo {
+        justify-content: center;
     }
 
+    .footer-logo img {
+        height: 35px;
+        width: 35px;
+    }
+
+    .footer-title-container span {
+        font-size: 1.1rem;
+    }
+
+    .footer-subtitle {
+        font-size: 0.8rem;
+    }
+
+    /* Floating Buttons Mobile Positioning */
     .whatsapp-float {
         width: 50px;
         height: 50px;
         bottom: 20px;
-        right: 20px;
-        font-size: 24px;
+        right: 15px;
+        font-size: 22px;
     }
 
     .facebook-float {
         width: 50px;
         height: 50px;
         bottom: 80px;
-        right: 20px;
-        font-size: 24px;
+        right: 15px;
+        font-size: 20px;
     }
 
     .instagram-float {
         width: 50px;
         height: 50px;
         bottom: 140px;
-        right: 20px;
-        font-size: 24px;
+        right: 15px;
+        font-size: 22px;
     }
 
     /* Enhanced Review Section Mobile Styles */
@@ -1889,33 +2028,463 @@ section {
     }
 }
 
-@media (max-width: 480px) {
+/* Tablet and Medium Devices */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .container {
+        padding: 0 30px;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-content {
+        padding: 2.5rem 2rem;
+    }
+
+    .hero-logo-img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .team-bubbles {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .reviews-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .contact-content iframe {
+        height: 400px !important;
+    }
+
+    .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 25px;
+        right: 25px;
+        font-size: 26px;
+    }
+
+    .facebook-float {
+        width: 55px;
+        height: 55px;
+        bottom: 90px;
+        right: 25px;
+        font-size: 24px;
+    }
+
+    .instagram-float {
+        width: 55px;
+        height: 55px;
+        bottom: 155px;
+        right: 25px;
+        font-size: 26px;
+    }
+}
+
+/* Large Mobile Devices */
+@media (max-width: 640px) and (min-width: 481px) {
     .hero-title {
         font-size: 2rem;
     }
 
-    .services-grid,
-    .team-grid,
-    .reviews-grid {
-        grid-template-columns: 1fr;
+    .hero-subtitle {
+        font-size: 0.95rem;
     }
 
-    .service-card,
-    .team-member,
-    .review-card {
-        padding: 1.5rem;
+    .hero-logo-img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .section-title {
+        font-size: 1.9rem;
+    }
+
+    .service-card {
+        padding: 1.8rem 1.3rem;
+    }
+
+    .service-icon {
+        width: 65px;
+        height: 65px;
+        font-size: 1.6rem;
     }
 
     .gallery-container {
-        height: 300px;
+        height: 280px;
     }
 
-    .gallery-btn {
-        display: none;
+    .contact-content iframe {
+        height: 280px !important;
     }
 }
 
-/* Accessibility */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .nav-container {
+        padding: 0 15px;
+    }
+
+    .nav-title {
+        font-size: 1rem;
+    }
+
+    .nav-subtitle {
+        font-size: 0.7rem;
+    }
+
+    .logo {
+        height: 45px;
+        width: 45px;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-content {
+        padding: 1.5rem 1rem;
+        margin: 0 0.5rem;
+        border-radius: 15px;
+    }
+
+    .hero-logo {
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-logo-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        gap: 8px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .services-grid {
+        gap: 1rem;
+        padding: 0 5px;
+    }
+
+    .service-card {
+        padding: 1.5rem 1rem;
+        border-radius: 15px;
+    }
+
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .service-card p {
+        font-size: 0.9rem;
+    }
+
+    .gallery-container {
+        height: 250px;
+        border-radius: 15px;
+    }
+
+    .gallery-btn {
+        display: none; /* Hide navigation buttons on very small screens */
+    }
+
+    .slide-caption {
+        font-size: 0.9rem;
+        padding: 20px 15px 15px;
+    }
+
+    .contact-item {
+        margin-bottom: 1.2rem;
+    }
+
+    .contact-item i {
+        font-size: 1.2rem;
+    }
+
+    .contact-item h4 {
+        font-size: 1rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .contact-item p {
+        font-size: 0.9rem;
+    }
+
+    .contact-content iframe {
+        height: 250px !important;
+        border-radius: 10px;
+    }
+
+    .social-links {
+        margin-top: 1.5rem;
+        justify-content: center;
+    }
+
+    .social-link {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+
+    .footer-content {
+        gap: 1.5rem;
+    }
+
+    .footer-logo img {
+        height: 30px;
+        width: 30px;
+    }
+
+    .footer-title-container span {
+        font-size: 1rem;
+    }
+
+    .footer-subtitle {
+        font-size: 0.75rem;
+    }
+
+    .footer-links {
+        gap: 1rem;
+    }
+
+    .footer-links a {
+        font-size: 0.9rem;
+    }
+
+    .footer-social a {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem;
+        padding-top: 1.5rem;
+    }
+
+    /* Extra small floating buttons */
+    .whatsapp-float {
+        width: 45px;
+        height: 45px;
+        bottom: 15px;
+        right: 10px;
+        font-size: 20px;
+    }
+
+    .facebook-float {
+        width: 45px;
+        height: 45px;
+        bottom: 70px;
+        right: 10px;
+        font-size: 18px;
+    }
+
+    .instagram-float {
+        width: 45px;
+        height: 45px;
+        bottom: 125px;
+        right: 10px;
+        font-size: 20px;
+    }
+
+    /* Team bubbles extra small */
+    .team-bubble {
+        border-radius: 15px;
+        padding: 1.2rem 0.8rem;
+    }
+
+    .bubble-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .bubble-title {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .bubble-quote {
+        font-size: 0.8rem;
+        line-height: 1.5;
+        padding: 0;
+    }
+
+    .bubble-decoration {
+        width: 35px;
+        height: 35px;
+        top: -12px;
+        right: -12px;
+    }
+
+    /* Review cards extra small */
+    .review-card {
+        padding: 1.2rem;
+        border-radius: 15px;
+        gap: 1rem;
+    }
+
+    .review-rating .stars {
+        font-size: 1rem;
+    }
+
+    .rating-text {
+        font-size: 1rem;
+    }
+
+    .review-text p {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+
+    .review-author {
+        font-size: 0.8rem;
+    }
+}
+
+/* Base responsive improvements */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Improved button touch targets for mobile */
+@media (max-width: 768px) {
+    .cta-button,
+    .modal-book-btn,
+    .modal-close-btn,
+    .primary-review-button,
+    .secondary-review-button,
+    .read-reviews-button {
+        min-height: 44px; /* iOS recommended touch target size */
+        touch-action: manipulation; /* Prevent double-tap zoom */
+    }
+}
+
+/* Viewport-based font scaling for better readability */
+@media (max-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+    
+    body {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+/* Improved spacing for mobile */
+@media (max-width: 768px) {
+    section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 40px 0;
+    }
+}
+
+/* Better gallery mobile experience */
+@media (max-width: 768px) {
+    .gallery-slide {
+        /* Add touch swipe capability indication */
+        cursor: grab;
+    }
+    
+    .gallery-slide:active {
+        cursor: grabbing;
+    }
+    
+    .slide-caption {
+        font-size: 0.95rem;
+        padding: 25px 15px 15px;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    }
+}
+
+/* Improved modal responsiveness */
+@media (max-width: 640px) {
+    .modal-content {
+        margin: 10px;
+        max-height: calc(100vh - 20px);
+        border-radius: 15px;
+    }
+    
+    .modal-header {
+        padding: 1.2rem 1.2rem 0.8rem 1.2rem;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .modal-body {
+        padding: 1.2rem;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .modal-footer {
+        padding: 0.8rem 1.2rem 1.2rem 1.2rem;
+        flex-direction: column-reverse;
+        gap: 0.8rem;
+    }
+    
+    .modal-book-btn,
+    .modal-close-btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+}
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;

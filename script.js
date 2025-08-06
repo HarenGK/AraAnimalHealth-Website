@@ -6,7 +6,41 @@ document.addEventListener('DOMContentLoaded', function() {
     showSlide(slideIndex);
     initializeNavigation();
     initializeScrollEffects();
+    initializeTouchSwipe();
 });
+
+// Touch swipe functionality for mobile gallery
+function initializeTouchSwipe() {
+    const galleryContainer = document.querySelector('.gallery-container');
+    if (!galleryContainer) return;
+
+    let startX = 0;
+    let endX = 0;
+    const minSwipeDistance = 50;
+
+    galleryContainer.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    galleryContainer.addEventListener('touchend', function(e) {
+        endX = e.changedTouches[0].clientX;
+        handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+        const swipeDistance = startX - endX;
+        
+        if (Math.abs(swipeDistance) > minSwipeDistance) {
+            if (swipeDistance > 0) {
+                // Swipe left - next slide
+                changeSlide(1);
+            } else {
+                // Swipe right - previous slide
+                changeSlide(-1);
+            }
+        }
+    }
+}
 
 // Gallery slider functions
 function changeSlide(n) {
@@ -66,6 +100,9 @@ function initializeNavigation() {
         hamburger.addEventListener('click', function() {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
         });
 
         // Close mobile menu when clicking on a link
@@ -73,6 +110,7 @@ function initializeNavigation() {
             link.addEventListener('click', function() {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
             });
         });
 
@@ -82,6 +120,16 @@ function initializeNavigation() {
             if (!isClickInsideNav && navMenu.classList.contains('active')) {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
             }
         });
     }
@@ -424,7 +472,7 @@ function createScrollToTopButton() {
     scrollButton.className = 'scroll-to-top';
     scrollButton.style.cssText = `
         position: fixed;
-        bottom: 120px;
+        bottom: 280px;
         right: 40px;
         width: 50px;
         height: 50px;
@@ -436,11 +484,42 @@ function createScrollToTopButton() {
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
-        z-index: 99;
+        z-index: 98;
         box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     `;
 
+    // Add responsive positioning
+    const updateScrollButtonPosition = () => {
+        if (window.innerWidth <= 768) {
+            scrollButton.style.bottom = '200px';
+            scrollButton.style.right = '15px';
+            scrollButton.style.width = '45px';
+            scrollButton.style.height = '45px';
+            scrollButton.style.fontSize = '16px';
+        } else if (window.innerWidth <= 480) {
+            scrollButton.style.bottom = '180px';
+            scrollButton.style.right = '10px';
+            scrollButton.style.width = '40px';
+            scrollButton.style.height = '40px';
+            scrollButton.style.fontSize = '14px';
+        } else {
+            scrollButton.style.bottom = '280px';
+            scrollButton.style.right = '40px';
+            scrollButton.style.width = '50px';
+            scrollButton.style.height = '50px';
+            scrollButton.style.fontSize = '18px';
+        }
+    };
+
     document.body.appendChild(scrollButton);
+    updateScrollButtonPosition();
+
+    // Update position on window resize
+    window.addEventListener('resize', updateScrollButtonPosition);
 
     window.addEventListener('scroll', function() {
         if (window.scrollY > 300) {
@@ -457,6 +536,17 @@ function createScrollToTopButton() {
             top: 0,
             behavior: 'smooth'
         });
+    });
+
+    // Add hover effect
+    scrollButton.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.1)';
+        this.style.boxShadow = '0 6px 20px rgba(139, 92, 246, 0.5)';
+    });
+
+    scrollButton.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+        this.style.boxShadow = '0 4px 15px rgba(139, 92, 246, 0.3)';
     });
 }
 
