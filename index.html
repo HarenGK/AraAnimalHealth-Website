@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ara Animal Health Center by P&G Agro Vet</title>
+    <meta name="description" content="Ara Animal Health Centre provides comprehensive veterinary services including vaccinations, surgery, grooming, and general check-ups for your beloved pets.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.jpg" alt="Ara Animal Health Centre Logo" class="logo">
+                <div class="nav-title-container">
+                    <span class="nav-title">Ara Animal Health Centre</span>
+                    <span class="nav-subtitle"><span class="by-text">by</span> <span class="company-text">P&G Agro Vet</span></span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#team" class="nav-link">Our Team</a></li>
+                <li><a href="#reviews" class="nav-link">Reviews</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="logo.jpg" alt="Ara Animal Health Centre" class="hero-logo-img">
+            </div>
+            <h1 class="hero-title">Compassionate Care for Your Furry Friends</h1>
+            <p class="hero-subtitle">Professional veterinary services with a personal touch. Your pet's health and happiness is our priority.</p>
+            <a href="https://wa.me/60189884285" class="cta-button" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                Contact Us on WhatsApp
+            </a>
+        </div>
+       
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Comprehensive veterinary care for all your pet's needs</p>
+            <div class="services-grid">
+                <div class="service-card" data-service="checkups">
+                    <div class="service-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>General Check-ups</h3>
+                    <p>Regular health examinations to maintain your pet's wellbeing <br>(Cats, Dogs, Rabbits, Guinea Pigs, Hamsters, Birds & more)</p>
+                    <div class="service-card-overlay">
+                        <span>Click for more details</span>
+                    </div>
+                </div>
+
+                <div class="service-card" data-service="vaccinations">
+                    <div class="service-icon">
+                        <i class="fas fa-syringe"></i>
+                    </div>
+                    <h3>Vaccinations</h3>
+                    <p>Keep your pets protected with our comprehensive vaccination programs</p>
+                    <div class="service-card-overlay">
+                        <span>Click for more details</span>
+                    </div>
+                </div>
+
+                <div class="service-card" data-service="surgery">
+                    <div class="service-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Surgery</h3>
+                    <p>Advanced surgical procedures performed by experienced veterinarians</p>
+                    <div class="service-card-overlay">
+                        <span>Click for more details</span>
+                    </div>
+                </div>
+
+                <div class="service-card" data-service="grooming">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Grooming</h3>
+                    <p>Professional grooming services to keep your Cats & Dogs looking and feeling great</p>
+                    <div class="service-card-overlay">
+                        <span>Click for more details</span>
+                    </div>
+                </div>
+                
+                <div class="service-card" data-service="diagnostics">
+                    <div class="service-icon">
+                        <i class="fas fa-x-ray"></i>
+                    </div>
+                    <h3>Diagnostics</h3>
+                    <p>State-of-the-art diagnostic equipment for accurate health assessments</p>
+                    <div class="service-card-overlay">
+                        <span>Click for more details</span>
+                    </div>
+                </div>
+
+                <div class="service-card" data-service="boarding">
+                    <div class="service-icon">
+                        <i class="fas fa-paw"></i>
+                    </div>
+                    <h3>Pet Boarding</h3>
+                    <p>Safe and comfortable boarding facilities for your pets</p>
+                    <div class="service-card-overlay">
+                        <span>Click for more details</span>
+                    </div>
+                </div>
+
+                <div class="service-card" data-service="housecalls">
+                    <div class="service-icon">
+                        <i class="fas fa-ambulance"></i>
+                    </div>
+                    <h3>House Calls <br>(By Appointment)</h3>
+                    <p>Bringing veterinary care to the comfort of your home</p>
+                    <div class="service-card-overlay">
+                        <span>Click for more details</span>
+                    </div>
+                </div>
+
+                <!--Dental Scaling Service-->
+                <div class="service-card" data-service="dental">
+                    <div class="service-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3>Dental Scaling</h3>
+                    <p>Professional dental care to keep your pet's teeth healthy and clean</p>
+                    <div class="service-card-overlay">
+                        <span>Click for more details</span>
+                    </div>
+                </div>
+
+                <!--Blood Screening Service-->
+                <div class="service-card" data-service="bloodscreening">
+                    <div class="service-icon">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h3>Blood Screening</h3>
+                    <p>Comprehensive blood tests to monitor your pet's health</p>
+                    <div class="service-card-overlay">
+                        <span>Click for more details</span>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- Service Details Modal -->
+    <div id="serviceModal" class="service-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-icon">
+                    <i id="modalIcon"></i>
+                </div>
+                <div class="modal-details">
+                    <div id="modalDescription"></div>
+                    <div class="modal-features">
+                        <h4>What's Included:</h4>
+                        <ul id="modalFeatures"></ul>
+                    </div>
+                    <div class="modal-pricing" id="modalPricing"></div>
+                    <div class="modal-duration" id="modalDuration"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="https://wa.me/60189884285" class="modal-book-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    Book Appointment
+                </a>
+                <button class="modal-close-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <p class="section-subtitle">Take a look at our modern facilities and happy patients</p>
+            <div class="gallery-slider">
+                <div class="gallery-container">
+                    <div class="gallery-slide active">
+                        <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=800&h=600&fit=crop" alt="Modern clinic reception area">
+                        <div class="slide-caption">Our welcoming reception area</div>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=600&fit=crop" alt="Veterinary examination room">
+                        <div class="slide-caption">Fully equipped examination rooms</div>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="https://images.unsplash.com/photo-1415369629372-26f2fe60c467?w=800&h=600&fit=crop" alt="Happy dog patient">
+                        <div class="slide-caption">Happy and healthy patients</div>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=800&h=600&fit=crop" alt="Veterinary surgery room">
+                        <div class="slide-caption">State-of-the-art surgical facilities</div>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=800&h=600&fit=crop" alt="Cat being examined">
+                        <div class="slide-caption">Gentle care for all pets</div>
+                    </div>
+                </div>
+                <button class="gallery-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="gallery-btn next" onclick="changeSlide(1)">&#10095;</button>
+                <div class="gallery-dots">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <h2 class="section-title">Our Team</h2>
+            <p class="section-subtitle">Meet our experienced and caring veterinary professionals</p>
+            <div class="team-bubbles">
+                <div class="team-bubble" data-delay="0">
+                    <div class="bubble-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3 class="bubble-title">Chief Veterinarian</h3>
+                    <p class="bubble-quote">"Every pet deserves compassionate care and the best medical treatment. Your furry family member's health is my top priority."</p>
+                    <div class="bubble-decoration"></div>
+                </div>
+                
+                <div class="team-bubble" data-delay="200">
+                    <div class="bubble-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3 class="bubble-title">Senior Veterinarian</h3>
+                    <p class="bubble-quote">"Specializing in exotic animals and emergency care. No case is too complex when it comes to saving lives."</p>
+                    <div class="bubble-decoration"></div>
+                </div>
+                
+                <div class="team-bubble" data-delay="400">
+                    <div class="bubble-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="bubble-title">Veterinarian</h3>
+                    <p class="bubble-quote">"Preventive care is the key to a long, healthy life for your pets. Let's work together to keep them happy and thriving."</p>
+                    <div class="bubble-decoration"></div>
+                </div>
+                
+                <div class="team-bubble" data-delay="600">
+                    <div class="bubble-icon">
+                        <i class="fas fa-x-ray"></i>
+                    </div>
+                    <h3 class="bubble-title">Veterinary Technician</h3>
+                    <p class="bubble-quote">"Precision in diagnostics helps us understand your pet's needs better. Every test brings us closer to optimal health."</p>
+                    <div class="bubble-decoration"></div>
+                </div>
+                
+                <div class="team-bubble" data-delay="800">
+                    <div class="bubble-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="bubble-title">Practice Manager</h3>
+                    <p class="bubble-quote">"Creating a welcoming environment where both pets and their families feel comfortable and cared for is our mission."</p>
+                    <div class="bubble-decoration"></div>
+                </div>
+                
+                <div class="team-bubble" data-delay="1000">
+                    <div class="bubble-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3 class="bubble-title">Grooming Specialist</h3>
+                    <p class="bubble-quote">"A well-groomed pet is a happy pet. We make sure your furry friends look and feel their absolute best."</p>
+                    <div class="bubble-decoration"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section-->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2 class="section-title">Reviews</h2>
+            <p class="section-subtitle">What our clients say about us</p>
+            <div class="reviews-content">
+                <div class="review-card">
+                    <div class="review-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="rating-text">5.0</span>
+                    </div>
+                    <div class="review-text">
+                        <p>"Clean, courteous & friendly staff. Very good service and prices are reasonable. Took my rescue dog there & Dr Priya was very helpful + knowledgeable"</p>
+                        <span class="review-author">- Shal M. <a href="https://maps.app.goo.gl/HR8TjouMpVa7PRFR8" target="_blank"> via Google Reviews</a></span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="rating-text">5.0</span>
+                    </div>
+                    <div class="review-text">
+                        <p>"The best place to visit for your furbabies! Everyone is SO accommodating and helpful, from Reception to the vets, they have helped me MULTIPLE times for my cat Pablo. Wonderful team"</p>
+                        <span class="review-author">- Tania P. <a href="https://maps.app.goo.gl/125B21Ra7BqcUeN86" target="_blank">via Google Reviews</a></span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="rating-text">5.0</span>
+                    </div>
+                    <div class="review-text">
+                        <p>"I can't express how grateful I am for the exceptional care my pet received at this vet clinic. The admin staff, Nat were not only professional and knowledgeable but also showed genuine compassion towards my furry friend. The vet took the time to explain the diagnosis and treatment options, making sure I fully understood everything. The facility was clean, and appointments were punctual. My pet is now healthy and happy thanks to their expertise. I highly recommend this vet clinic to anyone seeking top-notch care for their beloved animals. Thanks Dr Gowri & Dr Sharon! And fellow staffs of Ara Animal Health."</p>
+                        <span class="review-author">- Ajis A. <a href="https://maps.app.goo.gl/f7M5hREvGjzZ3YEX6" target="_blank">via Google Reviews</a></span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Combined Review Actions Section -->
+            <div class="review-actions-section">
+                <div class="review-actions-container">
+                    <div class="review-actions-content">
+                        <!-- Read More Reviews Section -->
+                        <div class="more-reviews-section">
+                            <div class="more-reviews-icon">
+                                <i class="fab fa-google"></i>
+                            </div>
+                            <h4>Read More Reviews</h4>
+                            <p>See what our clients have to say about their experience with us</p>
+                            <a href="https://www.google.com/maps/place/Ara+Animal+Health+Center/@3.123395996852106,101.57162297475669,15z/data=!4m6!3m5!1s0x31cc4e889db7fb8f:0xe80c87a6f8b886ec!8m2!3d3.123395996852106!4d101.57162297475669!16s%2Fg%2F11c1l9_5qj?entry=ttu" target="_blank" class="read-reviews-button">
+                                <i class="fas fa-external-link-alt"></i>
+                                View on Google Maps
+                            </a>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="actions-divider">
+                            <div class="divider-line"></div>
+                            <span class="divider-text">OR</span>
+                            <div class="divider-line"></div>
+                        </div>
+
+                        <!-- Leave a Review Section -->
+                        <div class="leave-review-section-inline">
+                            <div class="review-icon">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>Love our service?</h4>
+                            <p>Help others discover our compassionate veterinary care by sharing your experience</p>
+                            <div class="review-buttons">
+                                <a href="https://www.google.com/maps/place/Ara+Animal+Health+Center/@3.123395996852106,101.57162297475669,15z/data=!4m6!3m5!1s0x31cc4e889db7fb8f:0xe80c87a6f8b886ec!8m2!3d3.123395996852106!4d101.57162297475669!16s%2Fg%2F11c1l9_5qj?entry=ttu" target="_blank" class="primary-review-button">
+                                    <i class="fab fa-google"></i>
+                                    <span>Leave a Google Review</span>
+                                </a>
+                                <a href="https://www.facebook.com/Animalhealthcenteratara/" target="_blank" class="secondary-review-button">
+                                    <i class="fab fa-facebook"></i>
+                                    <span>Review on Facebook</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Benefits Section -->
+                    <div class="review-benefits">
+                        <div class="benefit-item">
+                            <i class="fas fa-heart"></i>
+                            <span>Help pet parents find us</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-users"></i>
+                            <span>Support our business</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-thumbs-up"></i>
+                            <span>Share your positive experience</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Location & Contact</h2>
+            <p class="section-subtitle">Visit us or get in touch for any inquiries</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>25, Jalan PJU 1a/20a,<br> 
+                            Taman Perindustrian Jaya, <br>
+                            47301 Petaling Jaya, Selangor</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <a href="tel:+60189884285"> +6018 988 4285</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Hours</h4>
+                            <p><b>Mon-Tue:</b> 10:30 AM - 5:30 PM
+                                <br><b>Wed:</b> 10:30 AM - 1:00 PM
+                                <br><b>Thu:</b> 10:30 AM - 5:30 PM
+                                <br><b>Sat-Sun:</b> 10:30 AM - 2:30 PM
+                            </p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:animalhealthcenter25@gmail.com">animalhealthcenter25@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/Animalhealthcenteratara/" target="_blank" class="social-link">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/ara_animalhealthcenter/" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.8914639380414!2d101.57162297475669!3d3.123395996852106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4e889db7fb8f%3A0xe80c87a6f8b886ec!2sAra%20Animal%20Health%20Center!5e0!3m2!1sen!2smy!4v1754219300874!5m2!1sen!2smy" 
+                width="800" 
+                height="500" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo.jpg" alt="Ara Animal Health Centre">
+                    <div class="footer-title-container">
+                        <span>Ara Animal Health Centre</span>
+                        <span class="footer-subtitle"><span class="by-text">by</span> <span class="company-text">P&G AGRO VET</span></span>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#team">Our Team</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/Animalhealthcenteratara/" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/ara_animalhealthcenter/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/60189884285" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ara Animal Health Center by P&G AGRO VET SDN. BHD. | All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Social Buttons -->
+    <a href="https://wa.me/60189884285" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <a href="https://www.facebook.com/Animalhealthcenteratara/" class="facebook-float" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    
+    <a href="https://www.instagram.com/ara_animalhealthcenter/" class="instagram-float" target="_blank">
+        <i class="fab fa-instagram"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
