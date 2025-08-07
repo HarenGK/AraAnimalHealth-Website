@@ -62,9 +62,14 @@ function showSlide(n) {
         slideIndex = slides.length;
     }
     
-    // Hide all slides
+    // Hide all slides and pause any videos
     for (let i = 0; i < slides.length; i++) {
         slides[i].classList.remove('active');
+        // Pause any videos in hidden slides
+        const video = slides[i].querySelector('video');
+        if (video) {
+            video.pause();
+        }
     }
     
     // Remove active class from all dots
